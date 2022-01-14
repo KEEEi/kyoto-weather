@@ -4,7 +4,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/KEEEi/kyoto-weather/weather"
+	weather "github.com/KEEEi/kyoto-weather/kyoto"
 	"github.com/line/line-bot-sdk-go/linebot"
 )
 
