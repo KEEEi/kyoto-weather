@@ -4,6 +4,7 @@ import (
 	"log"
 	"os"
 
+	"github.com/KEEEi/kyoto-weather/weather"
 	"github.com/line/line-bot-sdk-go/linebot"
 )
 
@@ -18,9 +19,10 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	result := weather.GetWeather()
+
 	// テキストメッセージを生成する
-	message := linebot.NewTextMessage("チャーっす")
-	// テキストメッセージを友達登録しているユーザー全員に配信する
+	message := linebot.NewTextMessage(result) // テキストメッセージを友達登録しているユーザー全員に配信する
 	if _, err := bot.BroadcastMessage(message).Do(); err != nil {
 		log.Fatal(err)
 	}
